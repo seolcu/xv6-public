@@ -56,9 +56,9 @@ This guide below is written by [seolcu](https://github.com/seolcu), not xv6 devs
 
 ### How to compile
 
-To compile xv6 without issue, you need Ubuntu 22.04 environment. If your compiler version does not match, warnings arise and `-Werror` flag cancels the compiliation.
+To compile xv6 without issue, you need Ubuntu 22.04 (or lower) environment. If your compiler version does not match, warnings arise and `-Werror` flag cancels the compiliation.
 
-But you don't need to install full Ubuntu 22.04 env if you are already using Linux or macOS, as you can use [Distrobox](https://distrobox.it/).
+But you don't need to setup full Ubuntu 22.04 env if you are already using Linux or macOS, as you can use [Distrobox](https://distrobox.it/).
 
 Install distrobox, and create Ubuntu 22.04 toolbox container with command below:
 
@@ -74,3 +74,30 @@ sudo apt install build-essential qemu-system -y
 ```
 
 Now, you can compile xv6 with `make` and run it with `make qemu`.
+
+### How to run via Bochs
+
+You need Bochs 2.2.6:
+
+```bash
+wget https://master.dl.sourceforge.net/project/bochs/bochs/2.2.6/bochs-2.2.6.tar.gz
+tar -xvf bochs-2.2.6.tar.gz
+rm bochs-2.2.6.tar.gz
+cd bochs-2.2.6
+```
+
+Install xorg library:
+
+```bash
+sudo apt install xorg-dev
+```
+
+Configure, folloing `Notes` file:
+
+```bash
+./configure --enable-smp --enable-disasm --enable-debugger --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --disable-reset-on-triple-fault
+```
+
+Then, `make`.
+
+(But it fails now...)
