@@ -183,7 +183,7 @@ vga: extension=none
 # such as a: or b: as the path.  The parameter 'image' works with image files
 # only. In that case the size must match one of the supported types.
 #=======================================================================
-floppya: 1_44=/dev/fd0, status=inserted
+# floppya: 1_44=/dev/fd0, status=inserted
 #floppya: image=../1.44, status=inserted
 #floppya: 1_44=/dev/fd0H1440, status=inserted
 #floppya: 1_2=../1_2, status=inserted
@@ -196,7 +196,7 @@ floppya: 1_44=/dev/fd0, status=inserted
 # See FLOPPYA above for syntax
 #=======================================================================
 #floppyb: 1_44=b:, status=inserted
-floppyb: 1_44=b.img, status=inserted
+# floppyb: 1_44=b.img, status=inserted
 
 #=======================================================================
 # ATA0, ATA1, ATA2, ATA3
