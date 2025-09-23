@@ -57,7 +57,7 @@
 #display_library: nogui
 #display_library: rfb, options="timeout=60" # time to wait for client
 #display_library: sdl, options="fullscreen" # startup in fullscreen mode
-#display_library: term
+display_library: term
 #display_library: win32, options="legacyF12" # use F12 to toggle mouse
 #display_library: wx
 #display_library: x
@@ -216,9 +216,9 @@ vga: extension=none
 #   ata3: enabled=1, ioaddr1=0x168, ioaddr2=0x360, irq=9
 #=======================================================================
 ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
-ata1: enabled=1, ioaddr1=0x170, ioaddr2=0x370, irq=15
-ata2: enabled=0, ioaddr1=0x1e8, ioaddr2=0x3e0, irq=11
-ata3: enabled=0, ioaddr1=0x168, ioaddr2=0x360, irq=9
+# ata1: enabled=1, ioaddr1=0x170, ioaddr2=0x370, irq=15
+# ata2: enabled=0, ioaddr1=0x1e8, ioaddr2=0x3e0, irq=11
+# ata3: enabled=0, ioaddr1=0x168, ioaddr2=0x360, irq=9
 
 #=======================================================================
 # ATA[0-3]-MASTER, ATA[0-3]-SLAVE
@@ -270,7 +270,7 @@ ata3: enabled=0, ioaddr1=0x168, ioaddr2=0x360, irq=9
 #   ata3-slave:  type=cdrom, path=iso.sample, status=inserted
 #=======================================================================
 ata0-master: type=disk, mode=flat, path="xv6.img", cylinders=100, heads=10, spt=10
-ata0-slave: type=disk, mode=flat, path="fs.img", cylinders=1024, heads=1, spt=1
+ata0-slave: type=disk, mode=flat, path="fs.img", cylinders=1000, heads=1, spt=1
 #ata0-slave: type=cdrom, path=D:, status=inserted
 #ata0-slave: type=cdrom, path=/dev/cdrom, status=inserted
 #ata0-slave: type=cdrom, path="drive", status=inserted
