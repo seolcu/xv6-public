@@ -75,12 +75,12 @@ sudo apt install build-essential qemu-system -y
 
 Now, you can compile xv6 with `make` and run it with `make qemu`.
 
-### How to attach gdb
+### How to attach gdb(pwndbg)
 
-Install gdb:
+Install pwndbg:
 
 ```bash
-sudo apt install gdb
+curl -qsL 'https://install.pwndbg.re' | sh -s -- -t pwndbg-gdb
 ```
 
 Run xv6 with gdb stub:
@@ -89,11 +89,7 @@ Run xv6 with gdb stub:
 make qemu-gdb
 ```
 
-Run `gdb` on a new terminal and attach with port 26000:
-
-```
-(gdb) target remote localhost:26000
-```
+Run `pwndbg` in a new terminal.
 
 Now you are attached with xv6 in qemu.
 
