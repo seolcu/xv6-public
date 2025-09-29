@@ -75,6 +75,30 @@ sudo apt install build-essential qemu-system -y
 
 Now, you can compile xv6 with `make` and run it with `make qemu`.
 
+### How to attach gdb
+
+Install gdb:
+
+```bash
+sudo apt install gdb
+```
+
+Run xv6 with gdb stub:
+
+```bash
+make qemu-gdb
+```
+
+Run `gdb` on a new terminal and attach with port 26000:
+
+```
+(gdb) target remote localhost:26000
+```
+
+Now you are attached with xv6 in qemu.
+
 ### How to run via Bochs(2.2.6)
 
 Check out [this guide](https://github.com/seolcu/bochs-2.2.6) to setup bochs 2.2.6.
+
+(currently not working)
