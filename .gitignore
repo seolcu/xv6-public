@@ -16,3 +16,4 @@ mkfs
 .gdbinit
 .bochsrc
 bochsout.txt
+.gdb_history
